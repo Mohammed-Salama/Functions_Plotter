@@ -31,7 +31,7 @@ run command:
 2. Then run the code
 
 ## Test Results:
-![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/6.png)
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/7.png)
 
 
 
