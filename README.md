@@ -26,6 +26,13 @@ run command:
 ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/4.png)
 ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/5.png)
 
+## In Case You need to run tests code:
+1. Make the global variable test = 1 
+2. Then run the code
+
+## Test Results:
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/6.png)
+
 
 
 

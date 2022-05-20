@@ -10,6 +10,8 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.backends.backend_tkagg import NavigationToolbar2Tk
 #define an App class that inherits from the tk.Tk
+
+test = 0
 class FunctionPlotter(tk.Tk):
     def __init__(self):
         """
@@ -36,6 +38,8 @@ class FunctionPlotter(tk.Tk):
         ttk.Entry(self,width=WIDGET_WIDTH,textvariable = self.min_x).grid(column=2  ,row=2)
         tk.Label(self, text='Miximum value of x : ',font=LabelsFont , fg='#0D1B5B',bg = '#8397F0').grid(column=1  ,row=3,pady=10,padx = 25)
         ttk.Entry(self,width=WIDGET_WIDTH,textvariable = self.max_x).grid(column=2  ,row=3)
+        if test == 1 :
+            self.Test()
         tk.Button(self, text="Plot The Function", command=self.onPlotButtonPress ,bg = '#10206B',fg = 'white', font=ButtonsFont ).grid(column= 2, row= 4,pady=10)
         tk.Button(self, text="Plot New Function", command=self.onClearButtonPress ,bg = '#10206B',fg = 'white' , font=ButtonsFont ).grid(column= 2, row= 5,pady=10)
     def onPlotButtonPress(self):
@@ -43,7 +47,8 @@ class FunctionPlotter(tk.Tk):
         Event handler of the plotting button
         """
         fx , min_x , max_x = self.getInputs()
-        if self.checkInputsValidity(fx,min_x,max_x)==True:
+        check , _ = self.checkInputsValidity(fx,min_x,max_x)
+        if check==True:
             self.Plot(fx , min_x , max_x)
         else:
             return
@@ -71,22 +76,31 @@ class FunctionPlotter(tk.Tk):
         max_x= self.max_x.get()
         return fx , min_x , max_x
         
-    def checkInputsValidity(self , fx , min_x , max_x):
+    def checkInputsValidity(self , fx , min_x , max_x , testc=0):
         """
         This function checks the input validity
         """
         if self.isNumber(min_x) == False:
             self.showMessage("error" , "minimum value of x must be a number")
-            return False
+            return False , 1
         
         if self.isNumber(max_x) == False:
             self.showMessage("error" , "maximum value of x must be a number")
-            return False
+            return False , 2
 
         if float(min_x)>= float(max_x):
               self.showMessage("error" , "Enter a valid range (max > min)")
+              return False , 3
+        if testc==1:
+            nfx = fx
+            try:
+                nfx = nfx.replace('^' ,'**' )
+                ny = eval(nfx)
+            except:
+                self.showMessage("error" , "Enter a valid function")
+                return False , 4
         
-        return True
+        return True , 1
 
     def isNumber(self,str):
         try:
@@ -127,7 +141,52 @@ class FunctionPlotter(tk.Tk):
             y=[]
         axes.plot(x,y)
         figure_canvas.get_tk_widget().grid(row=7,column=2,pady=10)
-
+    def Test(self):
+        self.fx.set("2 * x")
+        self.min_x.set("20")
+        self.max_x.set("10")
+        fx , min_x , max_x = self.getInputs()
+        _,err = self.checkInputsValidity(fx , min_x , max_x)
+        if (err == 3):
+            print("Test 1 Passed")
+        else:
+            print("Test 1 Failed")
+            return
+        
+        self.fx.set("2 * x")
+        self.min_x.set("salama")
+        self.max_x.set("10")
+        fx , min_x , max_x = self.getInputs()
+        _,err = self.checkInputsValidity(fx , min_x , max_x)
+        if (err == 1):
+            print("Test 2 Passed")
+        else:
+            print("Test 2 Failed")
+            return
+        
+        self.fx.set("2 * x")
+        self.min_x.set("20")
+        self.max_x.set("salama")
+        fx , min_x , max_x = self.getInputs()
+        _,err = self.checkInputsValidity(fx , min_x , max_x)
+        if (err == 2):
+            print("Test 3 Passed")
+        else:
+            print("Test 3 Failed")
+            return
+        
+        self.fx.set("salama")
+        self.min_x.set("20")
+        self.max_x.set("30")
+        fx , min_x , max_x = self.getInputs()
+        _,err = self.checkInputsValidity(fx , min_x , max_x,testc=1)
+        if (err == 4):
+            print("Test 4 Passed")
+        else:
+            print("Test 4 Failed")
+            return
+        print("ALL TESTS PASSED SUCCESSFULLY")
+        
 
 
 if __name__ == "__main__":
