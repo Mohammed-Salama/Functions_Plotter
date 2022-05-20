@@ -16,8 +16,9 @@ run the following commands to install needed libraries
 run command:
   ``` python3 Functions_Plotter.py ```
 
- # Example:
+ # Examples:
  ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/2.png)
+ ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/6.png)
 
 
 # Invalid inputs Handeling:
