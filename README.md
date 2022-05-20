@@ -20,7 +20,7 @@ run command:
  ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/2.png)
 
 
-# Errors Handeling:
+# Invalid inputs Handeling:
 ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/3.png)
 ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/4.png)
 ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/5.png)
