@@ -1,7 +1,7 @@
 # Functions Plotter
 ## An application for plotting functions
 
-![image](https://github.com/Mohammed-Salama/Functions_Plotter/tree/main/ScreenShots/1.png)
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/1.png)
 
 
 
@@ -17,13 +17,13 @@ run command:
   ``` python3 Function_Plotter.py ```
 
  # Example:
- ![image](https://github.com/Mohammed-Salama/Functions_Plotter/ScreenShots/2.png)
+ ![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/2.png)
 
 
 # Errors Handeling:
-![image](https://github.com/Mohammed-Salama/Functions_Plotter/ScreenShots/3.png)
-![image](https://github.com/Mohammed-Salama/Functions_Plotter/ScreenShots/4.png)
-![image](https://github.com/Mohammed-Salama/Functions_Plotter/ScreenShots/5.png)
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/3.png)
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/4.png)
+![image](https://github.com/Mohammed-Salama/Functions_Plotter/blob/main/ScreenShots/5.png)
 
 
 
